@@ -1,7 +1,9 @@
-<robot>
+<robot name="example_robot">
+
   <!-- This file is an example that can be included from jackal.urdf.xacro
        by setting the JACKAL_URDF_EXTRAS environment variable to the full
        path of this file. -->
+
 
   <camera_mount prefix="front" tilt="0.5236"/>
   <joint name="front_camera_mount_joint" type="fixed">

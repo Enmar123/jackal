@@ -1,0 +1,13 @@
+# The mapping configuration of Jackal reflects the infrastructure 
+# mapping setup develped at Florida International University.
+# Contains:
+#   Added:
+#     sick_tim551 lidar
+#   TODO:
+#     sensor_mount
+#     RPLIDAR A2
+#     4x usb cameras
+#     Intel RealSense T265
+
+
+MAPPING=1
