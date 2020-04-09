@@ -36,6 +36,8 @@
 
   <!-- If enabled, generate the MAPPING configuration. -->
   <xacro:include filename="$(find sick_tim)/urdf/sick_tim.urdf.xacro" />
+  <xacro:include filename="$(find rplidar_ros)/urdf/rplidar.urdf.xacro" />
+  
   <xacro:if value="$(optenv MAPPING 0)">
     <xacro:sick_tim551 name="laser" ros_topic="scan" />
 
@@ -45,6 +47,17 @@
       <parent link="$(optenv JACKAL_LASER_MOUNT front)_mount" />
       <child link="laser_mount_link" />
     </joint>
+    
+        
+    <xacro:rplidar_a2 name="rplidar_laser" ros_topic="rplidar/scan" />
+
+    <joint name="$jackal_sicktim_joint" type="fixed">
+      <origin xyz="0.2 0 0"
+              rpy="0 1.5708 0" />
+      <parent link="$(optenv JACKAL_LASER_MOUNT front)_mount" />
+      <child link="rplidar_laser_mount_link" />
+    </joint>
+    
   </xacro:if>
 
 <!-- ########################################################################### -->
